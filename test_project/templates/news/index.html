@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News</title>
+
+        <style>
+            body {
+                background-color: yellow;
+                margin: 50px;
+                }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="text-align: center;">School News</h1>
+        <div>
+            {% if list %}
+            {% for news in list %}
+            <h2> {{news.title}} </h2>
+            <p><i>by {{news.author}}, &emsp; {{news.date}} </i></p>
+            <p> {{news.text}} </p><br><br>
+            {% endfor %}
+            {% else %}
+            <strong>No news today.</strong>
+            {% endif %}
+        </div>
+    </body>
+
+</html>
